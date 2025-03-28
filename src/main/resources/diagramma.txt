@@ -4,4 +4,6 @@ Libro UNO --------- MOLTI Prestito
 
 Rivista UNO --------- MOLTI Prestito
 
-Prestito MOLTI ----------- MOLTI Elemento Prestato
+Prestito MOLTI ----------- UNO Elemento Prestato
+
+Elemento Prestato UNO ----------- MOLTI prestito
