@@ -1,0 +1,7 @@
+Utente UNO --------- MOLTI Prestito
+
+Libro UNO --------- MOLTI Prestito
+
+Rivista UNO --------- MOLTI Prestito
+
+Prestito MOLTI ----------- MOLTI Elemento Prestato

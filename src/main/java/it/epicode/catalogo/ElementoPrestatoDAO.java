@@ -44,11 +44,11 @@ public class ElementoPrestatoDAO {
 
     public List<ElementoPrestato> getByTitolo(String titolo) {
         TypedQuery<ElementoPrestato> query = em.createNamedQuery("ElementoPrestato.findByTitolo", ElementoPrestato.class);
-        query.setParameter("titolo", "%" + titolo + "%");  // Usato % per la ricerca parziale
+        query.setParameter("titolo", "%" + titolo + "%");
         return query.getResultList();
     }
 
-   
+
 
 
 

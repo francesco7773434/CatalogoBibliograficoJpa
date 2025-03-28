@@ -15,7 +15,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@NamedQuery(
+        name = "Prestito.findByNumeroDiTesseraAndActive",
+        query = "SELECT p FROM Prestito p WHERE p.utente.numeroDiTessera = :numeroDiTessera AND p.dataRestituzionePrevista IS NULL"
+)
 public class Prestito {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

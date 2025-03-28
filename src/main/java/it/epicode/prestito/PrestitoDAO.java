@@ -43,6 +43,11 @@ public class PrestitoDAO {
     public void getById(Long id){
         em.find(Prestito.class, id);
     }
+    public List<Prestito> getPrestitiAttiviByNumeroDiTessera(String numeroDiTessera) {
+        return em.createNamedQuery("Prestito.findByNumeroDiTesseraAndActive", Prestito.class)
+                .setParameter("numeroDiTessera", numeroDiTessera)
+                .getResultList();
+    }
 
 
 

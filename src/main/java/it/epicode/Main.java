@@ -28,9 +28,11 @@ public class Main {
 
         Utente utente = new Utente(null, "Giuseppe", "Verdi", "01/01/2000", null);
         Utente utente1 = new Utente(null, "Francesco", "Orbello", "03/06/1995", null);
+        Utente utente2 = new Utente(null, "Francesco", "Orbello", "03/06/1995", null);
 
         Prestito prestito = new Prestito(null, utente, libro, "01/05/2018", "01/06/2018", null);
         Prestito prestito1 = new Prestito(null, utente1, rivista, "01/07/2018", "01/08/2018", null);
+        Prestito prestito2 = new Prestito(null, utente2, rivista2, "01/07/2018", "01/08/2018", null);
 
 
 
@@ -45,11 +47,16 @@ public class Main {
         dao.save(rivista);
         dao.save(rivista2);
 
-        prestitoDAO.save(prestito);
-        prestitoDAO.save(prestito1);
 
         utenteDAO.save(utente);
         utenteDAO.save(utente1);
+        utenteDAO.save(utente2);
+
+
+        prestitoDAO.save(prestito);
+        prestitoDAO.save(prestito1);
+        prestitoDAO.save(prestito2);
+
 
         System.out.println("Ricerca per ISBN - libro1:");
         Libro libroTrovato = (Libro) dao.getByISBN(libro.getIsbn());
@@ -73,6 +80,16 @@ public class Main {
         for (ElementoPrestato p : prestitiPerTitolo) {
             System.out.println(p);
         }
+
+        Long numeroDiTessera = 1L;
+        List<Prestito> prestitiAttivi = prestitoDAO.getPrestitiAttiviByNumeroDiTessera(String.valueOf(numeroDiTessera));
+
+        System.out.println("Prestiti attivi per numero di tessera " + numeroDiTessera + ":");
+        for (Prestito p : prestitiAttivi) {
+            System.out.println(p.getElementoPrestato().getTitolo());
+        }
+
+
 
 
 
