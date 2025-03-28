@@ -20,6 +20,7 @@ import java.util.List;
         @NamedQuery(name = "ElementoPrestato.findByTitolo", query = "SELECT e FROM ElementoPrestato e WHERE e.titolo LIKE :titolo"),
 
 })
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class ElementoPrestato {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

@@ -60,9 +60,11 @@ public class Main {
 
         System.out.println("Ricerca per ISBN - libro1:");
         Libro libroTrovato = (Libro) dao.getByISBN(libro.getIsbn());
+        System.out.println(libroTrovato.getTitolo());
 
         System.out.println("Rimozione dell'elemento con ISBN " + libro2.getIsbn());
         dao.deleteByISBN(libro2.getIsbn());
+        System.out.println("libro eliminato con successo:"+libro2.getTitolo());
 
         System.out.println("Ricerca per Anno di Pubblicazione - 1997 (Harry Potter):");
         List<ElementoPrestato> prestitiPerAnno = dao.getByAnnoPubblicazione(1997);
